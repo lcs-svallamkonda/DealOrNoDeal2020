@@ -157,7 +157,7 @@ for turn in 1...briefcasesOpened {
 
 // STUDENTS: Do any remaining calculations you might need below.
 
-func findAverage() -> Double {
+func findAverage() -> Int {
     
     //iterate over values and add them up
     var runningTotal = 0
@@ -167,7 +167,7 @@ func findAverage() -> Double {
     }
    
     //convert values to double values then divide by the number of briefcases left
-    return Double(runningTotal) / Double(10 - briefcasesOpened)
+    return Int(runningTotal) / Int(10 - briefcasesOpened)
     
 }
 
@@ -181,3 +181,15 @@ var bankerOffer = bankerOfferFunc()
 //
 
 // STUDENTS: Now tell the player whether to take the deal, or not.
+func dealOrNoDeal() {
+    
+    //if the average is less than the bankers offer take the deal, otherwise don't
+    if average > bankerOffer {
+        print("No Deal")
+    } else {
+        print("Deal")
+    }
+}
+
+//use dealOrNoDeal function
+dealOrNoDeal()
