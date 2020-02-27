@@ -103,14 +103,45 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
         // If we've made it here, the input is valid
         briefcasesOpened = integerGiven2
         
-        // Stop looping
-        break
+        // The statement below can be modified
+        return briefcasesOpened
         
     }
     
-    // The statement below can be modified
-    return briefcasesOpened
     
+}
+
+//create a func to ask for banker's offer
+func bankerOfferFunc() -> Int {
+    
+    while true {
+        
+        // Ask for input
+        print("What is the banker's offer?")
+        guard let inputGiven3 = readLine() else {
+            
+            // No input given, return to top of loop and ask again
+            continue
+        }
+        
+        // Attempt to make input into an integer
+        guard let integerGiven3 = Int(inputGiven3) else {
+            
+            // Could not make input into an integer, so return to top and ask again
+            continue
+
+        }
+        
+        // Check that integer is in desired range
+        guard integerGiven3 > 0 else {
+            
+            // Integer not in desired range, return to top and ask again
+            continue
+            
+        }
+        
+       return integerGiven3
+    }
 }
 
 // Loop and ask what briefcases have been opened
@@ -142,7 +173,7 @@ func findAverage() -> Double {
 
 //use the find average function
 var average = findAverage()
-
+var bankerOffer = bankerOfferFunc()
 
 
 //
