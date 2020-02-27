@@ -75,17 +75,41 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
     // STUDENTS: Complete this function
     while true{
         
-        //ask for input
-        print("Which briefcase did you choose on turn \(turn)?")
-        guard let inputgiven2 = readLine() else {
+        // Ask for input
+        print("Which briefcase did you choose on turn \(turn)")
+        guard let inputGiven2 = readLine() else {
             
             // No input given, return to top of loop and ask again
-                   continue
+            continue
         }
+        
+        // Attempt to make input into an integer
+        guard let integerGiven2 = Int(inputGiven2) else {
+            
+            // Could not make input into an integer, so return to top and ask again
+            continue
+
+        }
+        
+        // Check that integer is in desired range
+        // REMEMBER: Guard statement conditions describe what we WANT
+        guard integerGiven2 > 0, integerGiven2 < 11 else {
+            
+            // Integer not in desired range, return to top and ask again
+            continue
+            
+        }
+        
+        // If we've made it here, the input is valid
+        briefcasesOpened = integerGiven2
+        
+        // Stop looping
+        break
+        
     }
     
     // The statement below can be modified
-    return 0
+    return briefcasesOpened
     
 }
 
